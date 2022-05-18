@@ -1,0 +1,23 @@
+diff -rNu a/build.sh b/build.sh
+--- a/android/jni/build.sh	1969-12-31 16:00:00.000000000 -0800
++++ b/android/jni/build.sh	2019-03-21 17:44:55.282721533 -0700
+@@ -0,0 +1,19 @@
++~/Android/Sdk/ndk-bundle/ndk-build
++
++copy_file()
++{
++	src_file=$1
++	dst_dir=$2
++	mkdir -p ${dst_dir}
++	cp -v ${src_file} ${dst_dir}
++}
++
++copy_file ../libs/arm64-v8a/libusb1.0.so ../../../../../Samples/Android/app/gtiDemo/app/src/main/jniLibs/arm64-v8a/.
++copy_file ../libs/arm64-v8a/libusb1.0.so ../../../../../Apps/Android/app/gti4Demo/app/src/main/jniLibs/arm64-v8a/.
++copy_file ../libs/arm64-v8a/libusb1.0.so ../../../../../Lib/Android/arm64-v8a/.
++
++copy_file ../libs/armeabi-v7a/libusb1.0.so ../../../../../Samples/Android/app/gtiDemo/app/src/main/jniLibs/armeabi-v7a/.
++copy_file ../libs/armeabi-v7a/libusb1.0.so ../../../../../Apps/Android/app/gti4Demo/app/src/main/jniLibs/armeabi-v7a/.
++copy_file ../libs/armeabi-v7a/libusb1.0.so ../../../../../Lib/Android/armeabi-v7a/.
++ 
++

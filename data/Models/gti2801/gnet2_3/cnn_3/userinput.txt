@@ -1,0 +1,15 @@
+{
+  "Gti device type": 0,                  # 0: GTI 2801, 1: GTI 2803
+  "model": [
+    {
+      "Network name": "Gnet3",
+      "Image output format": 0,          # 0: Conv out pooling, 1: Sub layers, 2: Conv out, 3: Major layers
+      "Dump input image": 0,   
+      "EUSB write block numbers": 128,   # EUSB USB dongle block numbers for one write or read command, 2048 for best performance, 128 for USB 2.0 compatibility
+      "EUSB read delay": 5000,     # Delay time (us) between EUSB USB dongle write and read commands, 4000 for gNet3, 12000 for gNet1
+        "EUSB device node": "/dev/sg0",   # The first available EUSB device node, find the node name from folder /dev/ after dongle is plugged in 
+    }
+  ]
+}
+
+  

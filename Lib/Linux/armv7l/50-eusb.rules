@@ -1,0 +1,4 @@
+SUBSYSTEMS=="scsi",ATTR{vendor}=="Generic",ATTR{max_sectors}=="240",ATTR{max_sectors}="2048"
+KERNEL=="sd[a-z]*", SUBSYSTEMS=="usb", ATTRS{idProduct}=="0769",ATTRS{idVendor}=="05e3",RUN+="/bin/rm -fr /dev/%k"
+KERNEL=="sg[0-9]*", SUBSYSTEMS=="usb", ATTRS{idProduct}=="0769", ATTRS{idVendor}=="05e3", MODE="0666", OPTIONS+="last_rule"
+

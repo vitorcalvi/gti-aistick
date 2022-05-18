@@ -1,0 +1,28 @@
+This utility sends a binary pattern file into the GTI AI device through native usb interface and
+read back AI device processed results from the device.
+
+Command syntax:
+  ./usbTool <input bin filename>  <golden data filename>  [results output filename](optional)
+
+For example:
+  ./usbTool beach_52705239.bin beach_out_golden.bin
+
+To build and rebuild, use "make" and "make clean".
+
+
+For Android:
+
+1. Go to folder Android, run "./build.sh" to build the App
+2. copy all the files under ./libs/arm64-v8a or ./libs/armeabi-v7a folder into Android /data/ folder, 
+and copy the file beach_52705239.bin, beach_out_golden.bin and 5801_test.sh to the same folder
+3. Use adb to go the folder with all the files, run "export LD_LIBRARY_PATH=./" and "./5801_test.sh"
+to test it.
+
+
+To enter into sleep mode:
+  ./usbTool sleep.bin sleep.bin
+
+Disclaimer:
+This utility is build on top of "libusb", please see "https://libusb.info/" for
+license requirements.
+
